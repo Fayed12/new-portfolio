@@ -1,0 +1,184 @@
+/* ── Base button ──────────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-family: var(--font-display);
+    font-weight: var(--weight-semibold);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wide);
+    border-radius: var(--radius-button);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+        transform var(--duration-base) var(--ease-spring),
+        box-shadow var(--duration-moderate) var(--ease-out),
+        background-color var(--duration-base) var(--ease-in-out),
+        border-color var(--duration-base) var(--ease-in-out),
+        color var(--duration-base) var(--ease-in-out),
+        opacity var(--duration-base) var(--ease-in-out);
+    position: relative;
+    overflow: hidden;
+    /* default size — md */
+    padding: 12px var(--space-6);
+    height: var(--button-height-lg);
+}
+
+/* Ripple shimmer on hover */
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.07) 50%,
+        transparent 100%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.45s var(--ease-smooth);
+    pointer-events: none;
+}
+.btn:hover::after {
+    transform: translateX(100%);
+}
+
+/* ── Size modifiers ───────────────────────────────────────── */
+.btn[data-size="sm"] {
+    padding: 8px var(--space-4);
+    height: var(--button-height-sm);
+    font-size: var(--text-xs);
+}
+.btn[data-size="md"] {
+    padding: 10px var(--space-5);
+    height: var(--button-height-md);
+}
+.btn[data-size="lg"] {
+    padding: 14px var(--space-8);
+    height: var(--button-height-lg);
+    font-size: var(--text-base);
+}
+.btn[data-size="xl"] {
+    padding: 16px var(--space-10);
+    height: 56px;
+    font-size: var(--text-lg);
+}
+
+/* ── Variant: primary (default) ───────────────────────────── */
+.btn[data-variant="primary"],
+.btn:not([data-variant]) {
+    background: var(--gradient-primary);
+    color: #fff;
+    box-shadow: var(--glow-button);
+}
+.btn[data-variant="primary"]:hover,
+.btn:not([data-variant]):hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow-primary);
+    filter: brightness(1.08);
+}
+.btn[data-variant="primary"]:active,
+.btn:not([data-variant]):active {
+    transform: var(--transform-button-press);
+    box-shadow: none;
+}
+
+/* ── Variant: ghost ───────────────────────────────────────── */
+.btn[data-variant="ghost"] {
+    background: transparent;
+    color: var(--color-neon-violet);
+    border: 1px solid var(--color-border-active);
+}
+.btn[data-variant="ghost"]:hover {
+    background: rgba(123, 97, 255, 0.09);
+    box-shadow: var(--glow-primary);
+    transform: translateY(-2px);
+}
+.btn[data-variant="ghost"]:active {
+    transform: var(--transform-button-press);
+}
+
+/* ── Variant: outline ─────────────────────────────────────── */
+.btn[data-variant="outline"] {
+    background: transparent;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border-subtle);
+}
+.btn[data-variant="outline"]:hover {
+    border-color: var(--color-border-active);
+    color: var(--color-neon-violet);
+    box-shadow: var(--glow-primary);
+    transform: translateY(-2px);
+}
+.btn[data-variant="outline"]:active {
+    transform: var(--transform-button-press);
+}
+
+/* ── Variant: danger ──────────────────────────────────────── */
+.btn[data-variant="danger"] {
+    background: linear-gradient(135deg, var(--color-neon-coral) 0%, #ff8a87 100%);
+    color: #fff;
+    box-shadow: var(--glow-coral);
+}
+.btn[data-variant="danger"]:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 0 20px rgba(255, 94, 91, 0.5), 0 4px 24px rgba(255, 94, 91, 0.3);
+}
+.btn[data-variant="danger"]:active {
+    transform: var(--transform-button-press);
+    box-shadow: none;
+}
+
+/* ── Variant: cyan ────────────────────────────────────────── */
+.btn[data-variant="cyan"] {
+    background: linear-gradient(135deg, var(--color-neon-cyan) 0%, #00c9aa 100%);
+    color: var(--color-on-success);
+    box-shadow: var(--glow-cyan);
+}
+.btn[data-variant="cyan"]:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: 0 0 20px rgba(0, 229, 192, 0.5), 0 4px 24px rgba(0, 229, 192, 0.3);
+}
+.btn[data-variant="cyan"]:active {
+    transform: var(--transform-button-press);
+}
+
+/* ── Disabled state ───────────────────────────────────────── */
+.btn:disabled,
+.btn[aria-disabled="true"] {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+    filter: none;
+}
+
+/* ── Loading state ────────────────────────────────────────── */
+.btn[data-loading="true"] {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* ── Icon sizing inside button ────────────────────────────── */
+.btn svg,
+.btn .btnIcon {
+    font-size: var(--icon-md);
+    flex-shrink: 0;
+    transition: transform var(--duration-base) var(--ease-spring);
+}
+.btn[data-variant="primary"]:hover svg,
+.btn[data-variant="cyan"]:hover svg {
+    transform: translateX(3px);
+}
+.btn[data-variant="ghost"]:hover svg,
+.btn[data-variant="outline"]:hover svg {
+    transform: translateX(3px);
+}

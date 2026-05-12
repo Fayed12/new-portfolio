@@ -2,6 +2,7 @@
 import OfflinePage from "./pages/offline-page/OfflinePage"
 import WelcomePage from "./pages/welcome-page/WelcomePage"
 import PagesContainer from "./layout/pagesContainer"
+import useTheme from "./hooks/themeHook"
 
 // react
 import { useState, useEffect } from "react"
@@ -10,6 +11,9 @@ import { useState, useEffect } from "react"
 import { Outlet } from "react-router"
 
 function App() {
+
+  const { theme } = useTheme()
+
   // state
   const [online, setOnline] = useState(navigator.onLine)
   const [openWelcomePage, setOpenWelcomePage] = useState(() => {
@@ -42,6 +46,16 @@ function App() {
       return () => clearTimeout(timer)
     }
   }, [openWelcomePage])
+
+
+  // handle theme when open app or change theme value
+  useEffect(() => {
+    if (theme === "light") {
+      document.documentElement.classList.add("light")
+    } else {
+      document.documentElement.classList.remove("light")
+    }
+  }, [theme])
 
   // handle conditional return
   if (openWelcomePage) {

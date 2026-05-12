@@ -7,7 +7,7 @@ import MainButton from "../ui/button/MainButton";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 // react router
-import { NavLink } from "react-router";
+import { NavLink, useNavigate, useLocation } from "react-router";
 
 // gsap
 import { gsap } from "gsap";
@@ -24,6 +24,9 @@ const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navRef = useRef(null);
     const menuRef = useRef(null);
+
+    const navigate = useNavigate();
+    const location = useLocation().pathname;
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -128,9 +131,10 @@ const NavBar = () => {
                         {theme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}
                     </MainButton>
 
-                    <div className={styles.hireBtnWrapper}>
-                        <MainButton size="sm" action="primary">Hire Me</MainButton>
-                    </div>
+                    {
+                        location !== "/contact" &&
+                        <MainButton size="sm" action="primary" clickEvent={() => navigate('/contact')}>Hire Me</MainButton>
+                    }
 
                     {/* Burger Icon for Mobile */}
                     <button

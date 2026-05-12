@@ -2,37 +2,36 @@
 import styles from "./about.module.css";
 
 // react
-import { useEffect, useRef, useState, useCallback } from "react";
-
-// react router
-import { useNavigate } from "react-router";
+import { useEffect, useRef } from "react";
 
 // react icons
 import {
     FiMapPin,
     FiCloud,
     FiCode,
-    FiZap,
-    FiMonitor,
-    FiSettings,
-    FiGitCommit,
-    FiSend,
-    FiPackage,
-    FiPenTool
+    FiZap
 } from "react-icons/fi";
+
+import {
+    SiGit,
+    SiPostman,
+    SiNpm,
+    SiVite,
+    SiFigma,
+    SiGooglechrome
+} from "react-icons/si";
+
+import { VscVscode } from "react-icons/vsc";
 
 // gsap
 import { gsap } from "gsap";
 
 export default function About() {
-    const navigate = useNavigate();
-    const [isTransitioning, setIsTransitioning] = useState(false);
-
+    
     // Refs for animations
     const mainRef = useRef(null);
     const popRefs = useRef([]);
     const staggerRefs = useRef([]);
-    const flashRef = useRef(null);
 
     const addToPopRefs = (el) => {
         if (el && !popRefs.current.includes(el)) {
@@ -79,44 +78,8 @@ export default function About() {
         return () => ctx.revert();
     }, []);
 
-    const triggerTransition = useCallback(() => {
-        setIsTransitioning(true);
-        if (flashRef.current) {
-            gsap.to(flashRef.current, {
-                width: "250vw",
-                height: "250vw",
-                duration: 0.7,
-                ease: "power2.in",
-                onComplete: () => {
-                    setTimeout(() => {
-                        navigate("/skills");
-                        window.scrollTo(0, 0);
-                    }, 200);
-                }
-            });
-        }
-    }, [navigate]);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop = window.scrollY || document.documentElement.scrollTop;
-            const viewportHeight = window.innerHeight;
-            const pageHeight = document.documentElement.scrollHeight;
-
-            if (scrollTop + viewportHeight >= pageHeight - 5 && !isTransitioning) {
-                triggerTransition();
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [isTransitioning, triggerTransition]);
-
     return (
         <main className={styles.container} ref={mainRef}>
-            {/* Flash overlay for transition */}
-            <div className={styles.flashOverlay} ref={flashRef}></div>
-
             <div className={styles.contentWrapper}>
 
                 {/* --- Left Column --- */}
@@ -241,24 +204,19 @@ export default function About() {
                     <div className={styles.sectionBlock} ref={addToStaggerRefs}>
                         <div className={styles.sectionTitle}>MY DAILY TOOLS</div>
                         <div className={styles.toolsList}>
-                            <div className={styles.toolChip}><FiMonitor /> VS Code</div>
-                            <div className={styles.toolChip}><FiSettings /> DevTools</div>
-                            <div className={styles.toolChip}><FiGitCommit /> Git</div>
-                            <div className={styles.toolChip}><FiSend /> Postman</div>
-                            <div className={styles.toolChip}><FiPackage /> npm</div>
-                            <div className={styles.toolChip}><FiZap /> Vite</div>
-                            <div className={styles.toolChip}><FiPenTool /> Figma</div>
+                            <div className={styles.toolChip}><VscVscode /> VS Code</div>
+                            <div className={styles.toolChip}><SiGooglechrome /> DevTools</div>
+                            <div className={styles.toolChip}><SiGit /> Git</div>
+                            <div className={styles.toolChip}><SiPostman /> Postman</div>
+                            <div className={styles.toolChip}><SiNpm /> npm</div>
+                            <div className={styles.toolChip}><SiVite /> Vite</div>
+                            <div className={styles.toolChip}><SiFigma /> Figma</div>
                         </div>
                     </div>
 
                 </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <div className={styles.scrollIndicator}>
-                <span className={styles.scrollText}>SCROLL TO EXPLORE SKILLS</span>
-                <div className={styles.scrollLine}></div>
-            </div>
         </main>
     );
 }

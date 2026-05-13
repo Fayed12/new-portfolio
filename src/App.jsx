@@ -42,7 +42,7 @@ function App() {
       const timer = setTimeout(() => {
         setOpenWelcomePage(false)
         sessionStorage.setItem("welcomePage", "closed")
-      }, 7000)
+      }, 8000)
       return () => clearTimeout(timer)
     }
   }, [openWelcomePage])

@@ -4,6 +4,11 @@ import styles from "./WelcomePage.module.css";
 
 // react
 import { useEffect, useRef } from "react";
+
+// react router
+import { useNavigate } from "react-router";
+
+// gsap
 import gsap from "gsap";
 
 // icons
@@ -16,16 +21,20 @@ import {
   RiSparklingLine,
 } from "react-icons/ri";
 
-const SKILLS = ["React", "TypeScript", "Node.js", "GSAP", "UI/UX"];
+const SKILLS = ["React", "TypeScript", "JavaScript", "GSAP", "UI/UX", "Tailwind CSS", "CSS3", "HTML5", "redux-toolkit", "tan-stack-query", "material-ui"];
 const SOCIAL = [
-  { icon: RiGithubLine, href: "https://github.com", label: "GitHub" },
-  { icon: RiLinkedinLine, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: RiGithubLine, href: "https://github.com/Fayed12", label: "GitHub" },
+  { icon: RiLinkedinLine, href: "https://www.linkedin.com/in/mohamed-fayed-b27928256/", label: "LinkedIn" },
   { icon: RiMailLine, href: "mailto:hello@fayed.dev", label: "Email" },
 ];
-const WORDS = ["Full-Stack", "Developer", "&", "UI", "Craftsman"];
+const WORDS = ["Frontend", "Developer", "&", "UI", "Designer"];
 
 // component
 export default function WelcomePage() {
+  // hooks
+  const navigate = useNavigate();
+
+  // refs
   const containerRef = useRef(null);
   const badgeRef = useRef(null);
   const headlineRef = useRef(null);
@@ -110,26 +119,26 @@ export default function WelcomePage() {
           </h1>
 
           <p className={styles.subtitle} ref={subRef}>
-            I build <span className={styles.accentViolet}>fast</span>,{" "}
-            <span className={styles.accentCyan}>beautiful</span>, and{" "}
-            <span className={styles.accentViolet}>accessible</span> digital experiences — from pixel-perfect UIs to scalable back-ends.
+            I build <span className={styles.accentViolet}>interactive</span>,{" "}
+            <span className={styles.accentCyan}>responsive</span>, and{" "}
+            <span className={styles.accentViolet}>modern</span> digital experiences
           </p>
 
           {/* CTA — using MainButton */}
           <div className={styles.cta} ref={ctaRef}>
             <MainButton
-              href="#projects"
               action="primary"
               size="lg"
               title="View Projects"
+              clickEvent={() => navigate('/projects')}
             >
               View Projects <RiArrowRightLine />
             </MainButton>
             <MainButton
-              href="#contact"
               action="ghost"
               size="lg"
               title="Contact Me"
+              clickEvent={() => navigate('/contact')}
             >
               Contact Me
             </MainButton>
@@ -158,7 +167,7 @@ export default function WelcomePage() {
             <div className={styles.card}>
               <div className={styles.cardHeader} aria-hidden="true">
                 <span className={styles.dotRed} /><span className={styles.dotYellow} /><span className={styles.dotGreen} />
-                <span className={styles.dotTitle}>portfolio.tsx</span>
+                <span className={styles.dotTitle}>portfolio.jsx</span>
               </div>
 
               <pre className={styles.codeBlock}>
@@ -171,7 +180,7 @@ export default function WelcomePage() {
                   <span className={styles.cStr}>&quot;Fayed&quot;</span>,
                   {"\n  "}
                   <span className={styles.cProp}>role</span>:{" "}
-                  <span className={styles.cStr}>&quot;Full-Stack Dev&quot;</span>,
+                  <span className={styles.cStr}>&quot;Frontend Developer&quot;</span>,
                   {"\n  "}
                   <span className={styles.cProp}>passion</span>:{" "}
                   <span className={styles.cStr}>&quot;Crafting UIs ✨&quot;</span>,
@@ -185,7 +194,7 @@ export default function WelcomePage() {
               <div className={styles.statsRow}>
                 <div className={styles.stat}><span className={styles.statVal}>20+</span><span className={styles.statLabel}>Projects</span></div>
                 <div className={styles.statDivider} />
-                <div className={styles.stat}><span className={styles.statVal}>3+</span><span className={styles.statLabel}>Years</span></div>
+                <div className={styles.stat}><span className={styles.statVal}>0</span><span className={styles.statLabel}>Years</span></div>
                 <div className={styles.statDivider} />
                 <div className={styles.stat}><span className={styles.statVal}>100%</span><span className={styles.statLabel}>Passion</span></div>
               </div>

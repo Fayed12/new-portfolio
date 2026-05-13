@@ -94,6 +94,7 @@ const Experience = () => {
         <main className={styles.container} ref={mainRef}>
             {/* Header */}
             <div className={styles.header}>
+                <span className={styles.overline}>— 04 / EXPERIENCE</span>
                 <h1 className={styles.title}>Experience & Education</h1>
                 <p className={styles.subtitle}>
                     My academic journey and professional milestones, mapped in the void.

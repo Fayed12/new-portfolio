@@ -20,6 +20,14 @@
     margin-bottom: var(--space-16);
 }
 
+.overline {
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+}
+
 .title {
     font-size: clamp(2.2rem, 5vw, 3.5rem);
     font-weight: var(--weight-bold);

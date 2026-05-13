@@ -25,7 +25,7 @@ const SKILLS = ["React", "TypeScript", "JavaScript", "GSAP", "UI/UX", "Tailwind 
 const SOCIAL = [
   { icon: RiGithubLine, href: "https://github.com/Fayed12", label: "GitHub" },
   { icon: RiLinkedinLine, href: "https://www.linkedin.com/in/mohamed-fayed-b27928256/", label: "LinkedIn" },
-  { icon: RiMailLine, href: "mailto:hello@fayed.dev", label: "Email" },
+  { icon: RiMailLine, href: "mailto:mohamedfaye12d@gmail.com", label: "Email" },
 ];
 const WORDS = ["Frontend", "Developer", "&", "UI", "Designer"];
 

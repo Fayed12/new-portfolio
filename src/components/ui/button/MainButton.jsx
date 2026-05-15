@@ -29,7 +29,7 @@ const MainButton = ({
 
     if (href) {
         return (
-            <a href={href} {...sharedProps}>
+            <a href={href} {...sharedProps} target="_blank">
                 {children}
             </a>
         );

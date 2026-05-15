@@ -2,6 +2,7 @@
 import './index.css'
 import router from './router/mainRouter'
 import ThemeProvider from './context/themeProvider'
+import GitHubProvider from './context/gitHubProvider'
 
 // react
 import { StrictMode } from 'react'
@@ -16,8 +17,10 @@ import { ToastContainer } from 'react-toastify'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider>
-      <ToastContainer />
-      <RouterProvider router={router} />
+      <GitHubProvider>
+        <ToastContainer />
+        <RouterProvider router={router} />
+      </GitHubProvider>
     </ThemeProvider>
   </StrictMode>,
 )

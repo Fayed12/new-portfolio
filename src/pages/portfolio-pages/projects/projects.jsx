@@ -9,7 +9,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 // icons
-import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import { FiGithub, FiExternalLink } from 'react-icons/fi'; 
 
 const PROJECTS_DATA = [
     {

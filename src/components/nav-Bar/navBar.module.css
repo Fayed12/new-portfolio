@@ -3,8 +3,8 @@
     top: 0;
     z-index: var(--z-topbar);
     background-color: var(--color-void-glass);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: saturate(100%) blur(16px);
+    backdrop-filter: saturate(100%) blur(16px);
     border-bottom: 1px solid var(--glass-border);
     width: 100%;
 }

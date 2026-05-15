@@ -89,7 +89,6 @@ const Github = () => {
     }
 
     const { profile, stats, contributionGraph, pinnedRepos } = profileData;
-    console.log(profileData);
 
     // Helper function to get neon color class for heatmap
     const getHeatmapClass = (count) => {

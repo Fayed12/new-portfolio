@@ -18,7 +18,7 @@ const GitHubProvider = ({ children }) => {
                 const data = await githubFetch();
                 setProfileData(data);
             } catch (err) {
-                console.log(err);
+                console.error("GitHub API Error:", err);
             } finally {
                 setIsLoading(false);
             }

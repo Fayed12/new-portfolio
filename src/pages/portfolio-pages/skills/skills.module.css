@@ -46,15 +46,12 @@
 /* Tabs */
 .tabsContainer {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--space-4);
     margin-bottom: var(--space-12);
-    overflow-x: auto;
-    max-width: 100%;
+    width: 100%;
     padding: var(--space-2);
-}
-
-.tabsContainer::-webkit-scrollbar {
-    display: none;
 }
 
 /* Grid */

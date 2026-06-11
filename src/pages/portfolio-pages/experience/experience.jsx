@@ -15,7 +15,7 @@ const EXPERIENCE_DATA = [
         id: 1,
         type: "Education",
         title: "B.Sc. Computer Science",
-        date: "Oct 2022 - Present",
+        date: "Oct 2022 - June 2026",
         description: "Tanta University, Faculty of Computers & Information. Final Year.",
         pills: ["Data Structures", "Web Dev", "Software Eng", "HCI"],
         icon: FiAward,

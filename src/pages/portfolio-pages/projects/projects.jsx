@@ -14,15 +14,24 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 const PROJECTS_DATA = [
     {
         id: 1,
+        title: "moniq",
+        description: "Moniq is a modern personal finance and expense tracking application designed to help users monitor their income, expenses, and financial habits through analytics and interactive visualizations",
+        image: "/projects/moniq.png",
+        tech: ["react.js", "vite 7", "Redux Toolkit", "supabase.js", "React Router 7", "Axios", "React Hook Form", "gsap"],
+        github: "https://github.com/Fayed12/Moniq-Expense-Tracker/tree/main",
+        demo: "https://moniq-expense-tracker.vercel.app/",
+    },
+    {
+        id: 2,
         title: "Planora",
-        description: "Planora is a full-stack, real-time task and project management web application. It enables individuals and teams to plan, prioritize, collaborate, and track work with granular access control, insightful statistics, and a beautiful, fully responsive U",
+        description: "Planora is a full-stack, real-time task and project management web application. It enables individuals and teams to plan, prioritize, collaborate, and track work with granular access control, insightful statistics, and a beautiful, fully responsive UI",
         image: "/projects/planora.png",
         tech: ["react.js", "vite 7", "Redux Toolkit", "firebase", "React Router 7", "Axios", "React Hook Form"],
         github: "https://github.com/Fayed12/planora-task-management-app",
         demo: "https://planora-task-management-app.vercel.app/",
     },
     {
-        id: 2,
+        id: 3,
         title: "Zikry",
         description: "A comprehensive Islamic supplications manager designed for daily reflection. Features a clean, distraction-free interface with complex state management for tracking routines.",
         image: "/projects/zikry.png",
@@ -31,7 +40,7 @@ const PROJECTS_DATA = [
         demo: "https://zikry1.netlify.app/",
     },
     {
-        id: 3,
+        id: 4,
         title: "FoodHub",
         description: "A high-performance restaurant e-commerce platform. Built with robust form validation and seamless checkout flows for optimal user conversion.",
         image: "/projects/foodHub.png",
@@ -40,7 +49,7 @@ const PROJECTS_DATA = [
         demo: "",
     },
     {
-        id: 4,
+        id: 5,
         title: "Cineverse",
         description: "A rapid movie discovery engine leveraging TMDB API. Engineered with Vite for lightning-fast HMR and Firebase for robust user authentication and watchlist storage.",
         image: "/projects/movi.png",
@@ -49,7 +58,7 @@ const PROJECTS_DATA = [
         demo: "",
     },
     {
-        id: 5,
+        id: 6,
         title: "SparkChat",
         description: "A low-latency, real-time messaging application. Implements complex data synchronization across clients using Firebase Realtime Database and custom presence hooks.",
         image: "/projects/chat-app.png",

@@ -138,7 +138,7 @@ export default function Home() {
   // handle download file
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/cv.pdf";
+    link.href = "/mohamed-emad-fayed-cv.pdf";
     link.download = "Mohamed-fayed-CV.pdf";
     document.body.appendChild(link);
     link.click();

@@ -23,6 +23,15 @@ const PROJECTS_DATA = [
     },
     {
         id: 2,
+        title: "Quivio",
+        description: "Quivio is a premium, next-generation gamified online assessment and classroom management system. Architected for both instructors and students, it delivers an immersive, real-time testing experience combined with robust class analytics, digital certificate generation, automated grading, direct student-instructor messaging, and social gamification (XP, levels, streaks, and 3D leaderboards).",
+        image: "projects/quivio.png",
+        tech: ["react.js", "vite 7", "Redux Toolkit", "supabase.js", "React Router 7", "React Hook Form", "gsap", "recharts"],
+        github: "https://github.com/Fayed12/Quivio-web-app",
+        demo: "https://quivio-web-app.vercel.app/",
+    },
+    {
+        id: 3,
         title: "Planora",
         description: "Planora is a full-stack, real-time task and project management web application. It enables individuals and teams to plan, prioritize, collaborate, and track work with granular access control, insightful statistics, and a beautiful, fully responsive UI",
         image: "/projects/planora.png",
@@ -31,7 +40,7 @@ const PROJECTS_DATA = [
         demo: "https://planora-task-management-app.vercel.app/",
     },
     {
-        id: 3,
+        id: 4,
         title: "Zikry",
         description: "A comprehensive Islamic supplications manager designed for daily reflection. Features a clean, distraction-free interface with complex state management for tracking routines.",
         image: "/projects/zikry.png",
@@ -40,7 +49,7 @@ const PROJECTS_DATA = [
         demo: "https://zikry1.netlify.app/",
     },
     {
-        id: 4,
+        id: 5,
         title: "FoodHub",
         description: "A high-performance restaurant e-commerce platform. Built with robust form validation and seamless checkout flows for optimal user conversion.",
         image: "/projects/foodHub.png",
@@ -49,7 +58,7 @@ const PROJECTS_DATA = [
         demo: "",
     },
     {
-        id: 5,
+        id: 6,
         title: "Cineverse",
         description: "A rapid movie discovery engine leveraging TMDB API. Engineered with Vite for lightning-fast HMR and Firebase for robust user authentication and watchlist storage.",
         image: "/projects/movi.png",
@@ -58,7 +67,7 @@ const PROJECTS_DATA = [
         demo: "",
     },
     {
-        id: 6,
+        id: 7,
         title: "SparkChat",
         description: "A low-latency, real-time messaging application. Implements complex data synchronization across clients using Firebase Realtime Database and custom presence hooks.",
         image: "/projects/chat-app.png",
